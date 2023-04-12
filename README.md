@@ -43,7 +43,7 @@ oracle SQL
   
   create , alter , drop , rename , truncate , comment
   
-  ## 데이터 조작어 설명
+## 데이터 조작어 설명
   
   * insert - 테이블에 새로운 행 삽입  -  입력되는 행은 보통 테이블 맨 마지막 행
   * update - 테이블에 있는 행을 변경
@@ -60,6 +60,17 @@ oracle SQL
     
     insert into emp ( 28, '기선2', 'gidor' , 30 );
     
+## 데이터 수정 update
+
+    update 테이블 이름
+    set 칼럼1 = 값1 
+    where 조건식
+    ;
+    
+    update emp
+    set name = '한기선1'
+    where name = '한기선'
+    ;
     
     
      
