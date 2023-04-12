@@ -72,6 +72,16 @@ oracle SQL
     where name = '한기선'
     ;
     
+## 데이터 삭제 delete
+
+    delete from  테이블이름
+    where  조건식 ;
+    
+    delete from sub_party
+    where price = 10000 
+    ;
+    
+--------   
     
      
      
