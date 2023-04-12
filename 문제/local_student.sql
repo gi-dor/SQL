@@ -1,49 +1,49 @@
 select * from SUB_PARTY;
 
-insert into  sub_party values('È°½î´Â ¹Ú¾¾' ,'±Ã¼ö', 'µô·¯', 3 , 2000 ); 
-insert into  sub_party values('°Ë¾²´Â ±è¾¾', '°Ë¹æ±â»ç' ,'ÅÊÄ¿', 4 , 1000 );
-insert into  sub_party values('2¼­Å¬ ÇÑ¾¾','¸¶¹ı»ç', 'µô·¯', 2 , 5000 );
-insert into  sub_party values('Èú¾²´Â ³ë¾¾','»çÁ¦' 'Èú·¯', 1 , 10000 );
-insert into  sub_party values('¿ĞÆĞ Á¤¾¾','¸ùÅ©', 'ÅÊÄ¿', 4 , 1500 );
+insert into  sub_party values('í™œì˜ëŠ” ë°•ì”¨' ,'ê¶ìˆ˜', 'ë”œëŸ¬', 3 , 2000 ); 
+insert into  sub_party values('ê²€ì“°ëŠ” ê¹€ì”¨', 'ê²€ë°©ê¸°ì‚¬' ,'íƒ±ì»¤', 4 , 1000 );
+insert into  sub_party values('2ì„œí´ í•œì”¨','ë§ˆë²•ì‚¬', 'ë”œëŸ¬', 2 , 5000 );
+insert into  sub_party values('íì“°ëŠ” ë…¸ì”¨','ì‚¬ì œ' 'íëŸ¬', 1 , 10000 );
+insert into  sub_party values('ì™ˆíŒ¨ ì •ì”¨','ëª½í¬', 'íƒ±ì»¤', 4 , 1500 );
 
--- µ¥ÀÌÅÍ ºÎºĞ ÀÔ·Â
+-- ë°ì´í„° ë¶€ë¶„ ì…ë ¥
 insert into sub_party(name , tier)
-values('ÃßÀûÀÚ' , 0 );
+values('ì¶”ì ì' , 0 );
 
 insert into sub_party (name , job , position , tier)
-values ( 'Å×ÀÌ¸Ó' ,'ÁøÂ¥_Å×ÀÌ¸Ó' , '¼­ºêÅÊÄ¿' ,0.5 );
+values ( 'í…Œì´ë¨¸' ,'ì§„ì§œ_í…Œì´ë¨¸' , 'ì„œë¸Œíƒ±ì»¤' ,0.5 );
 
--- µ¥ÀÌÅÍ ¼öÁ¤
+-- ë°ì´í„° ìˆ˜ì •
 update sub_party
-set name = '°¡Â¥ Å×ÀÌ¸Ó' , tier = 2
+set name = 'ê°€ì§œ í…Œì´ë¨¸' , tier = 2
 
-where name = 'Å×ÀÌ¸Ó';
+where name = 'í…Œì´ë¨¸';
 
 
 update sub_party 
-set job = '¸¸·ù±ÍÁ¾' , position = 'ÁøÂ¥ Â¯½ë ÃßÀûÀÚ'
-where name = 'ÃßÀûÀÚ';
--- ½ºÆäÀÌ½º¹Ù °ø¹éµµ µÇ´Â°É È®ÀÎÇßÀ½ 
+set job = 'ë§Œë¥˜ê·€ì¢…' , position = 'ì§„ì§œ ì§±ìˆ ì¶”ì ì'
+where name = 'ì¶”ì ì';
+-- ìŠ¤í˜ì´ìŠ¤ë°” ê³µë°±ë„ ë˜ëŠ”ê±¸ í™•ì¸í–ˆìŒ 
 
 
 
--- µ¥ÀÌÅÍ »èÁ¦ 
--- »èÁ¦¸¦ À§ÇØ µ¥ÀÌÅÍ ÇÏ³ª¸¦ »ğÀÔ
-insert into  sub_party values('»ç½ÇÀº °­ÇÑ Á¤¾¾','¸ùÅ©', 'ÅÊÄ¿', 1 ,10000);
+-- ë°ì´í„° ì‚­ì œ 
+-- ì‚­ì œë¥¼ ìœ„í•´ ë°ì´í„° í•˜ë‚˜ë¥¼ ì‚½ì…
+insert into  sub_party values('ì‚¬ì‹¤ì€ ê°•í•œ ì •ì”¨','ëª½í¬', 'íƒ±ì»¤', 1 ,10000);
 
 delete from sub_party
 where price = 10000;
 
--- µ¥ÀÌÅÍ °Ë»ö
+-- ë°ì´í„° ê²€ìƒ‰
 
 select name
 from sub_party;
 
 
--- ÀüÃ¼ µ¥ÀÌÅÍÀÇ °Ë»ö
+-- ì „ì²´ ë°ì´í„°ì˜ ê²€ìƒ‰
 select * from sub_party;
 
--- Æ¯Á¤ Ä®·³ÀÇ °Ë»ö
+-- íŠ¹ì • ì¹¼ëŸ¼ì˜ ê²€ìƒ‰
 select name , job , tier
 from sub_party;
 
@@ -51,20 +51,3 @@ select name ,name , job , price
 from sub_party;
 
 --
-
-select * from s_emp;
-
-select 1 , 'abc', sysdate from dual ;  --printf("%d , %s ,%s", 1 , "abc" , sysdate)
-
-select 1+2 , 'abc', sysdate from dual ;
-
-select length ('ÇÑ±â¼±') from  dual; 
-select round from  (12.34567 ,3 ) ;
-select sysdate -1 from dual;
-select trunc (sysdate , 'month' ) from dual; -- 23 /04/01
-select trunc (sysdate , 'month' ) -1 from dual; -- 23/03/31
-
-select '123' - 1 from dual;  
-select to_number('123') -1 from dual;
-select to_char(300000, '$999,999' ) from dual;
-select to_date ('10 9¿ù 1992' , 'dd month yyyy') from dual; --- ¿¡·¯
