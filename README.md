@@ -143,9 +143,9 @@ from  - 선택한 컬럼이 있는 테이블
 1 ) 논리 비교 연산자  :  !=  , <>
 
 2 ) SQL 비교 연산자 : not in , not like , is not null 
-    not in (x,y)  --- x,y 아닌것
-    not like '사원' --- 사원 빼고
-    is not null -- null 이 아닌 값을 검색
+* not in (x,y)  --- x,y 아닌것
+* not like '사원' --- 사원 빼고
+* is not null -- null 이 아닌 값을 검색
     
 #### 비교연산자 사용예시 
     
