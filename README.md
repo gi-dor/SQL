@@ -49,7 +49,7 @@ oracle SQL
   * update - 테이블에 있는 행을 변경
   * delete - 테이블로부터 행을 삭제
 
-## 데이터 입력 insert
+#### 데이터 입력 insert
 
     insert into 테이블 이름 ( 컬럼1 , 컬럼 2, 컬럼3 ...)
     values ( 값1 , 값 2 , 값3....);
@@ -60,7 +60,7 @@ oracle SQL
     
     insert into emp ( 28, '기선2', 'gidor' , 30 );
     
-## 데이터 수정 update
+#### 데이터 수정 update
 
     update 테이블 이름
     set 칼럼1 = 값1 
@@ -72,7 +72,7 @@ oracle SQL
     where name = '한기선'
     ;
     
-## 데이터 삭제 delete
+#### 데이터 삭제 delete
 
     delete from  테이블이름
     where  조건식 ;
@@ -88,13 +88,11 @@ oracle SQL
     select (distinct) 컬럼이름 (alias)
     from 테이블 이름;
  
-select - 검색하고자 하는 컬럼 나열
+* select - 검색하고자 하는 컬럼 나열
+* distinct - 중복핵 제거
+* alias - 컬럼 별명만들기
+* from  - 선택한 컬럼이 있는 테이블
 
-distinct - 중복핵 제거
-
-alias - 컬럼 별명만들기
-
-from  - 선택한 컬럼이 있는 테이블
 ---
 
 
