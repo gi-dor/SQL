@@ -1,182 +1,182 @@
---23.04.15 ¿¹Á¦ º¹½ÀÇÏ±â
--- '»ç¿ø'ÀÇ ÀÌ¸§°ú Á÷±Ş ºÎ¼­ ¿¬ºÀ Á¶È¸
-select name as ÀÌ¸§ ,title as Á÷±Ş , dept_id ºÎ¼­
+--23.04.15 ì˜ˆì œ ë³µìŠµí•˜ê¸°
+-- 'ì‚¬ì›'ì˜ ì´ë¦„ê³¼ ì§ê¸‰ ë¶€ì„œ ì—°ë´‰ ì¡°íšŒ
+select name as ì´ë¦„ ,title as ì§ê¸‰ , dept_id ë¶€ì„œ
 from s_emp
-where title = '»ç¿ø'
+where title = 'ì‚¬ì›'
 ;
 select name , title, dept_id
 from s_emp
-where title like '»ç¿ø'
+where title like 'ì‚¬ì›'
 ;
 
--- ±Ù¹«ÀÚÀÇ ÀÌ¸§ , Á÷±Ş , ¿¬ºÀ , º¸³Ê½º (¿¬ºÀ5¹è)
-select name ÀÌ¸§ ,title Á÷±Ş, salary ¿¬ºÀ , salary*5 as º¸³Ê½º
+-- ê·¼ë¬´ìì˜ ì´ë¦„ , ì§ê¸‰ , ì—°ë´‰ , ë³´ë„ˆìŠ¤ (ì—°ë´‰5ë°°)
+select name ì´ë¦„ ,title ì§ê¸‰, salary ì—°ë´‰ , salary*5 as ë³´ë„ˆìŠ¤
 from s_emp
 ;
--- ±Ù¹«ÀÚÀÇ ÀÌ¸§ ,Á÷±Ş, ¿¬ºÀ , º¸³Ê½º (¿¬ºÀ5¹è) '»ç¿ø¸¸'
-select name ÀÌ¸§ ,title Á÷±Ş , salary ¿¬ºÀ , salary * 5 º¸³Ê½º
+-- ê·¼ë¬´ìì˜ ì´ë¦„ ,ì§ê¸‰, ì—°ë´‰ , ë³´ë„ˆìŠ¤ (ì—°ë´‰5ë°°) 'ì‚¬ì›ë§Œ'
+select name ì´ë¦„ ,title ì§ê¸‰ , salary ì—°ë´‰ , salary * 5 ë³´ë„ˆìŠ¤
 from s_emp
-where title like '»ç¿ø'
+where title like 'ì‚¬ì›'
 ;
--- ±Ù¹«ÀÚÀÇ ÀÌ¸§ , Á÷±Ş ,¿¬ºÀ , º¸³Ê½º (¿¬ºÀ5¹è) '°úÀå¸¸'
-select name ÀÌ¸§ , title Á÷±Ş , salary ¿¬ºÀ , salary*5 º¸³Ê½º
+-- ê·¼ë¬´ìì˜ ì´ë¦„ , ì§ê¸‰ ,ì—°ë´‰ , ë³´ë„ˆìŠ¤ (ì—°ë´‰5ë°°) 'ê³¼ì¥ë§Œ'
+select name ì´ë¦„ , title ì§ê¸‰ , salary ì—°ë´‰ , salary*5 ë³´ë„ˆìŠ¤
 from s_emp
-where title = '°úÀå'
+where title = 'ê³¼ì¥'
 ;
---ÇÕ¼º ¿¬»êÀÚ || ÀÌ¿ëÇØ¼­ 'ÀÌ¸§ Á÷±Ş'À¸·Î Ãâ·Â
+--í•©ì„± ì—°ì‚°ì || ì´ìš©í•´ì„œ 'ì´ë¦„ ì§ê¸‰'ìœ¼ë¡œ ì¶œë ¥
 select name || ' ' || title 
 from s_emp
 ;
-select name || '  '|| title "ÀÌ¸§          Á÷±Ş"
+select name || '  '|| title "ì´ë¦„          ì§ê¸‰"
 from s_emp
 ;
 
---¿¬ºÀÀÌ 500 ~2500 ÀÎ »ç¶÷ÀÇ ÀÌ¸§°ú Á÷±ŞÀ» Ç¥±â ÇÏ½Ã¿À , ´Ü »ç¿ø¸¸
+--ì—°ë´‰ì´ 500 ~2500 ì¸ ì‚¬ëŒì˜ ì´ë¦„ê³¼ ì§ê¸‰ì„ í‘œê¸° í•˜ì‹œì˜¤ , ë‹¨ ì‚¬ì›ë§Œ
 select name , title , salary
 from s_emp
-where title = '»ç¿ø'
+where title = 'ì‚¬ì›'
 and salary between 500 and 2500
 ;
--- ¿¬ºÀÀÌ 500 ~3000ÀÎ »ç¶÷ÀÇ ÀÌ¸§°ú Á÷±Ş ¿À¸§Â÷¼øÀ¸·Î Á¶È¸
+-- ì—°ë´‰ì´ 500 ~3000ì¸ ì‚¬ëŒì˜ ì´ë¦„ê³¼ ì§ê¸‰ ì˜¤ë¦„ì°¨ìˆœìœ¼ë¡œ ì¡°íšŒ
 select name , title , salary
 from s_emp
 where salary BETWEEN 500 and 3000
 order by salary
 ;
--- ¿¬ºÀÀÌ 1500 ÀÌ»óÀÎ »ç¶÷ÀÇ ÀÌ¸§°ú ¿¬ºÀ Á÷±ŞÀ» Á¶È¸ÇÏ½Ã¿À
-select * from s_emp;  -- ¿¬ºÀ ±¸°£ º¸·Á°í ÀüÃ¼ Á¶È¸ÇÔ
+-- ì—°ë´‰ì´ 1500 ì´ìƒì¸ ì‚¬ëŒì˜ ì´ë¦„ê³¼ ì—°ë´‰ ì§ê¸‰ì„ ì¡°íšŒí•˜ì‹œì˜¤
+select * from s_emp;  -- ì—°ë´‰ êµ¬ê°„ ë³´ë ¤ê³  ì „ì²´ ì¡°íšŒí•¨
 select name , salary , title
 from s_emp
 where salary >= 1500
 ;
--- ¿¬ºÀÀÌ 2000 ÀÌ»óÀÎ »ç¶÷ÀÇ ÀÌ¸§°ú Á÷±Ş ºÎ¼­ ¿¬ºÀ Á¶È¸
+-- ì—°ë´‰ì´ 2000 ì´ìƒì¸ ì‚¬ëŒì˜ ì´ë¦„ê³¼ ì§ê¸‰ ë¶€ì„œ ì—°ë´‰ ì¡°íšŒ
 select name , title , dept_id , salary
 from s_emp
 where salary >= 2000
 ;
--- ÀÔ»ç ³¯Â¥°¡ 16/12/31 ÀÌÀü¿¡ ÀÔ»çÇÑ »ç¶÷ÀÇ ÀÌ¸§°ú Á÷±Ş ÀÔ»ç ³¯Â¥ ¸¦ Ãâ·Â
+-- ì…ì‚¬ ë‚ ì§œê°€ 16/12/31 ì´ì „ì— ì…ì‚¬í•œ ì‚¬ëŒì˜ ì´ë¦„ê³¼ ì§ê¸‰ ì…ì‚¬ ë‚ ì§œ ë¥¼ ì¶œë ¥
 select name , title , start_date
 from s_emp
 where start_date <= '16/12/31'
 ;
--- ÀÔ»ç ³¯Â¥°¡ 15/12/31 ÀÌÈÄ¿¡ ÀÔ»çÇÑ »ç¶÷ÀÇ ÀÌ¸§°ú Á÷±Ş ÀÔ»ç ³¯Â¥ Á¶È¸
-select name ÀÌ¸§, title Á÷±Ş , start_date "ÀÔ»ç ³¯Â¥"
+-- ì…ì‚¬ ë‚ ì§œê°€ 15/12/31 ì´í›„ì— ì…ì‚¬í•œ ì‚¬ëŒì˜ ì´ë¦„ê³¼ ì§ê¸‰ ì…ì‚¬ ë‚ ì§œ ì¡°íšŒ
+select name ì´ë¦„, title ì§ê¸‰ , start_date "ì…ì‚¬ ë‚ ì§œ"
 from s_emp
 where start_date >= '15/12/31'
 ;
 
--- ÀÌ¸§°ú Á÷±Ş ºÎ¼­ ¸¦ Á¶È¸ ÇÏ´Âµ¥ ºÎ¼­°¡ 110 ,113ÀÎ »ç¶÷¸¸ Á¶È¸ 
-select name ÀÌ¸§ , title Á÷±Ş , dept_id ºÎ¼­
+-- ì´ë¦„ê³¼ ì§ê¸‰ ë¶€ì„œ ë¥¼ ì¡°íšŒ í•˜ëŠ”ë° ë¶€ì„œê°€ 110 ,113ì¸ ì‚¬ëŒë§Œ ì¡°íšŒ 
+select name ì´ë¦„ , title ì§ê¸‰ , dept_id ë¶€ì„œ
 from s_emp
 where dept_id in(110,113)
 ;
 
--- ÀÌ¸§°ú Á÷±Ş ºÎ¼­ Á¶È¸ ºÎ¼­°¡ 110 , 113, 111 ÀÎ »ç¶÷¸¸Á¶È¸
+-- ì´ë¦„ê³¼ ì§ê¸‰ ë¶€ì„œ ì¡°íšŒ ë¶€ì„œê°€ 110 , 113, 111 ì¸ ì‚¬ëŒë§Œì¡°íšŒ
 select name , title , dept_id
 from s_emp
 where dept_id in(110,113,111)
 ;
--- ÀÌ¸§°ú Á÷±Ş ºÎ¼­ Á¶È¸ ºÎ¼­°¡ 110 , 113, 111 ÀÎ »ç¶÷¸¸Á¶È¸ ÇÏ´Âµ¥ '»ç¿ø¸¸'
+-- ì´ë¦„ê³¼ ì§ê¸‰ ë¶€ì„œ ì¡°íšŒ ë¶€ì„œê°€ 110 , 113, 111 ì¸ ì‚¬ëŒë§Œì¡°íšŒ í•˜ëŠ”ë° 'ì‚¬ì›ë§Œ'
 select name , title , dept_id 
 from s_emp
 where dept_id in (110 , 113, 111)
-and title = '»ç¿ø'
+and title = 'ì‚¬ì›'
 ;
--- ÀÌ¸§ ÀÔ»ç ³¯Â¥ Á÷±ŞÀ» Á¶È¸ ÇÏ´Âµ¥ ÀÔ»ç³¯Â¥¿¡ 17ÀÏ¿¡ ÀÔ»çÇÑ »ç¶÷¸¸
+-- ì´ë¦„ ì…ì‚¬ ë‚ ì§œ ì§ê¸‰ì„ ì¡°íšŒ í•˜ëŠ”ë° ì…ì‚¬ë‚ ì§œì— 17ì¼ì— ì…ì‚¬í•œ ì‚¬ëŒë§Œ
 select name ,title , start_date
 from s_emp
 where start_date like '%17%'
 ;
--- ÀÌ¸§ ,ÀÔ»ç ³¯Â¥ ,Á÷±Ş ,ºÎ¼­ Á¶È¸ ÇÏ´Âµ¥ ÀÔ»ç³¯Â¥¿¡ 17ÀÏ¿¡ ÀÔ»çÇÑ »ç¶÷, ´Ü '»ç¿ø¸¸'
+-- ì´ë¦„ ,ì…ì‚¬ ë‚ ì§œ ,ì§ê¸‰ ,ë¶€ì„œ ì¡°íšŒ í•˜ëŠ”ë° ì…ì‚¬ë‚ ì§œì— 17ì¼ì— ì…ì‚¬í•œ ì‚¬ëŒ, ë‹¨ 'ì‚¬ì›ë§Œ'
 select name , start_date ,title, dept_id
 from s_emp
 where start_date like '%17%'
-and title = '»ç¿ø'
+and title = 'ì‚¬ì›'
 ;
--- °¢ ºÎ¼­º° Æò±Õ±Ş¿©¸¦ °è»êÇØ¼­ Á¶È¸
+-- ê° ë¶€ì„œë³„ í‰ê· ê¸‰ì—¬ë¥¼ ê³„ì‚°í•´ì„œ ì¡°íšŒ
 select dept_id ,avg(salary)
 from s_emp
 group by dept_id
 ;
--- °¢ ºÎ¼­º°·Î Á÷±ŞÀÌ »ç¿øÀÎ »ç¶÷µéÀÇ Æò±Õ ±Ş¿©¸¦ Á¶È¸ÇØÁà
-select dept_id , avg(salary) "ºÎ¼­³» »ç¿ø¿¬ºÀ"
+-- ê° ë¶€ì„œë³„ë¡œ ì§ê¸‰ì´ ì‚¬ì›ì¸ ì‚¬ëŒë“¤ì˜ í‰ê·  ê¸‰ì—¬ë¥¼ ì¡°íšŒí•´ì¤˜
+select dept_id , avg(salary) "ë¶€ì„œë‚´ ì‚¬ì›ì—°ë´‰"
 from s_emp
-where title = '»ç¿ø'
+where title = 'ì‚¬ì›'
 group by dept_id
 ;
 
--- °¢ ºÎ¼­º°·Î Á÷±ŞÀÌ °úÀåÀÎ »ç¶÷µéÀÇ Æò±Õ ±Ş¿©
+-- ê° ë¶€ì„œë³„ë¡œ ì§ê¸‰ì´ ê³¼ì¥ì¸ ì‚¬ëŒë“¤ì˜ í‰ê·  ê¸‰ì—¬
 select dept_id , avg(salary)
 from s_emp
-where title = '°úÀå'
+where title = 'ê³¼ì¥'
 group by dept_id
 ;
 
--- °¢ Áö¿ªº°·Î ¸î°³ÀÇ ºÎ¼­°¡ ÀÖ´ÂÁö Á¶È¸
+-- ê° ì§€ì—­ë³„ë¡œ ëª‡ê°œì˜ ë¶€ì„œê°€ ìˆëŠ”ì§€ ì¡°íšŒ
 select * from s_region;
 select * from s_emp;
-select * from s_dept; -- 1¹øÁö¿ª¿¡ ºÎ¼­ 4°³, 2¹øºÎ¼­ 2°³ÀÖ´Â°Å È®ÀÎ
+select * from s_dept; -- 1ë²ˆì§€ì—­ì— ë¶€ì„œ 4ê°œ, 2ë²ˆë¶€ì„œ 2ê°œìˆëŠ”ê±° í™•ì¸
 
 select region_id , count(name)
 from s_dept
 group by region_id
 ;
 
--- °¢ ºÎ¼­º°·Î Æò±Õ ±Ş¿©¸¦ ±¸ÇÏ¶ó , Æò±Õ ±Ş¿©°¡ 2000ÀÌ»óÀÎ ºÎ¼­¸¸ ³ªÅ¸³»Áà
+-- ê° ë¶€ì„œë³„ë¡œ í‰ê·  ê¸‰ì—¬ë¥¼ êµ¬í•˜ë¼ , í‰ê·  ê¸‰ì—¬ê°€ 2000ì´ìƒì¸ ë¶€ì„œë§Œ ë‚˜íƒ€ë‚´ì¤˜
 select dept_id , avg(salary) 
 from s_emp
 group by dept_id
 having avg(salary) >= 2000
 ;
 
--- °¢ Á÷Ã¥º°·Î ±Ş¿©ÀÇ ÃÑÇÕÀ» ±¸ÇÏµÇ Á÷Ã¥ÀÌ ºÎÀåÀÎ »ç¶÷Àº Á¦¿Ü
+-- ê° ì§ì±…ë³„ë¡œ ê¸‰ì—¬ì˜ ì´í•©ì„ êµ¬í•˜ë˜ ì§ì±…ì´ ë¶€ì¥ì¸ ì‚¬ëŒì€ ì œì™¸
 select title , sum(salary)
 from s_emp
 group by title
-having title not like '%ºÎÀå'
+having title not like '%ë¶€ì¥'
 ;
--- ´Ü ±Ş¿©ÀÇ ÃÑÇÕÀÌ 8000 ÀÌ»óÀÌ Á÷Ã¥¸¸ ³ªÅ¸³»°í ±Ş¿© ÃÑÇÕ¿¡ ´ëÇØ ¿À¸§Â÷¼øÀ¸·Î Á¤·Ä
+-- ë‹¨ ê¸‰ì—¬ì˜ ì´í•©ì´ 8000 ì´ìƒì´ ì§ì±…ë§Œ ë‚˜íƒ€ë‚´ê³  ê¸‰ì—¬ ì´í•©ì— ëŒ€í•´ ì˜¤ë¦„ì°¨ìˆœìœ¼ë¡œ ì •ë ¬
 select title , sum(salary)
 from s_emp
 group by title
-having title not like '%ºÎÀå'
+having title not like '%ë¶€ì¥'
 and sum(salary) >= 8000
 order by sum (salary)
 ;
--- °¢ ºÎ¼­º°·Î Á÷±ŞÀÌ »ç¿øÀÎ »ç¶÷µé¿¡ ´ëÇØ Æò±Õ ±Ş¿©¸¦ ±¸ÇØÁà
-select dept_id ºÎ¼­ , avg(salary) ±Ş¿©Æò±Õ
+-- ê° ë¶€ì„œë³„ë¡œ ì§ê¸‰ì´ ì‚¬ì›ì¸ ì‚¬ëŒë“¤ì— ëŒ€í•´ í‰ê·  ê¸‰ì—¬ë¥¼ êµ¬í•´ì¤˜
+select dept_id ë¶€ì„œ , avg(salary) ê¸‰ì—¬í‰ê· 
 from s_emp
-where title = '»ç¿ø'
+where title = 'ì‚¬ì›'
 group by dept_id
 ;
 
--- °¢ ºÎ¼­(dept_id)³»¿¡ Á÷±Şº°title ·Î ¸î¸íÀÇ ÀÎ¿øcountÀÌÀÖ´ÂÁö ³ªÅ¸³»½Ã¿À
+-- ê° ë¶€ì„œ(dept_id)ë‚´ì— ì§ê¸‰ë³„title ë¡œ ëª‡ëª…ì˜ ì¸ì›countì´ìˆëŠ”ì§€ ë‚˜íƒ€ë‚´ì‹œì˜¤
 select dept_id , title , count(*)
 from s_emp
 group by dept_id ,title
 ;
 
--- °¢ ºÎ¼­³»ÀÇ ¸î¸íÀÇ Á÷¿øÀÌ ±Ù¹«ÇÏ´ÂÁö Á¶È¸
+-- ê° ë¶€ì„œë‚´ì˜ ëª‡ëª…ì˜ ì§ì›ì´ ê·¼ë¬´í•˜ëŠ”ì§€ ì¡°íšŒ
 select dept_id , count (*)
 from s_emp
 group by dept_id
 ;
--- °¢ ºÎ¼­º°dep_id·Î ±Ş¿©ÀÇ ÃÖ¼Ò°ª min(salary)°ú ÃÖ´ë°ªÀ» max(salary) ³ªÅÂ³»Áà
+-- ê° ë¶€ì„œë³„dep_idë¡œ ê¸‰ì—¬ì˜ ìµœì†Œê°’ min(salary)ê³¼ ìµœëŒ€ê°’ì„ max(salary) ë‚˜íƒœë‚´ì¤˜
 select dept_id , min(salary) , max (salary)
 from s_emp
 group by dept_id 
 ;
--- °¢ ºÎ¼­º°·Î ±Ş¿©ÀÇ ÃÖ¼Ò°ª°ú ÃÖ´ë°ªÀ» ³ªÅ¸³»ÁÖ°í , ÃÖ¼Ò°ª°ú ÃÖ´ë°ªÀÌ °°Àº ºÎ¼­´Â Ãâ·ÂÇÏÁö¸¶
+-- ê° ë¶€ì„œë³„ë¡œ ê¸‰ì—¬ì˜ ìµœì†Œê°’ê³¼ ìµœëŒ€ê°’ì„ ë‚˜íƒ€ë‚´ì£¼ê³  , ìµœì†Œê°’ê³¼ ìµœëŒ€ê°’ì´ ê°™ì€ ë¶€ì„œëŠ” ì¶œë ¥í•˜ì§€ë§ˆ
 
 --select dept_id , min (salary) , max (salarty)
 --from s_emp
 --where min(salary) != max(salary)
 --group by dept_id
-----;  ¿¡·¯ 
+----;  ì—ëŸ¬ 
 -------------------------------------------
--- max (salarty) ¿ÀÅ¸ => max (salary)
--- min , max´Â having Àı·Î °¡¾ßÇÔ ¿Ö?
--- whereÀº true false ¸¸ ±¸ºĞÇÔ
+-- max (salarty) ì˜¤íƒ€ => max (salary)
+-- min , maxëŠ” having ì ˆë¡œ ê°€ì•¼í•¨ ì™œ?
+-- ê·¸ë£¹í•¨ìˆ˜ maxì™€ minì€ havingìœ¼ë¡œ 
 
 select dept_id , min(salary) , max(salary)
 from s_emp
