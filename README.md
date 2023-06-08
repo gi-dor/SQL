@@ -135,7 +135,8 @@ oracle SQL
 #### where 절에 사용되는 연산자
     where 형식 연산자 값
     
-    where title = '사원'
+    where title like '%사원%'  - 명확하지 않음 'ㅇㅇ사원' , '사원ㅇㅇ'  like 사용
+    where title = '사원' - 명확한 조건 ' = ' 사용
     where salary between 1000 and 2000
     
 #### 조건의 부정
@@ -158,7 +159,13 @@ oracle SQL
     select name , date,dapt_id
     from s_emp
     where date < '16/12/31'
-    '
+    ;
+    
+    select name , date,dapt_id
+    from s_emp
+    where date < to_date('16/12/31' , 'yy/mm/dd')
+    ;
+    
     
     select name , salary 
     from s_emp
