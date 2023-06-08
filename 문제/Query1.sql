@@ -1,15 +1,15 @@
 select * from s_emp;
 
--- Á¤·ÄÇÑ °á°ú¿¡¼­ ÇÏÀ§ 10¸í Á¶È¸
--- 1. Á¤·Ä
--- 2. ÇÏÀ§ 10¸í Á¶È¸
+-- ì •ë ¬í•œ ê²°ê³¼ì—ì„œ í•˜ìœ„ 10ëª… ì¡°íšŒ
+-- 1. ì •ë ¬
+-- 2. í•˜ìœ„ 10ëª… ì¡°íšŒ
 
--- 10¸íÁ¶È¸
+-- 10ëª…ì¡°íšŒ
 select * 
 from s_emp 
 where rownum between 1 and 10;
 
--- ¿¡·¯ ±¸Àı¼ø¼­ ¶§¹®
+-- ì—ëŸ¬ êµ¬ì ˆìˆœì„œ ë•Œë¬¸
 select * 
 from s_emp
 order by start_date desc
@@ -22,46 +22,46 @@ from (  select *
 where rownum between 1 and 10;
 
 
---- ¿¬ºÀ 2000 ÀÌ»óÀÎ »ç¶÷¸¸ Á¶È¸
+--- ì—°ë´‰ 2000 ì´ìƒì¸ ì‚¬ëŒë§Œ ì¡°íšŒ
 select * from s_emp
 where salary <= 2000;
 
--- Á÷¿ø Æò±Õ ¿¬ºÀ ±¸ÇÏ¶ó
+-- ì§ì› í‰ê·  ì—°ë´‰ êµ¬í•˜ë¼
 select avg(salary)
 from s_emp
 ;
 
--- ºÎ¼­º° Æò±Õ ¿¬ºÀ
+-- ë¶€ì„œë³„ í‰ê·  ì—°ë´‰
 select dept_id , avg(salary)
 from s_Emp
 group by dept_id
 ;
 
--- Æò±Õ ¿¬ºÀ ±× ÀÌ»óÀÎ »ç¶÷
+-- í‰ê·  ì—°ë´‰ ê·¸ ì´ìƒì¸ ì‚¬ëŒ
 select * 
 from s_emp
 where salary >= ( select avg(salary)from s_emp)
 ;
 -------------------------------------------------------------
 -- Single Row SubQUERY
--- '±èÁ¤¹Ì'¿Í °°Àº ºÎ¼­ÀÇ »ç¶÷µé ÀÌ¸§°ú Á÷±Ş ºÎ¼­¹øÈ£
+-- 'ê¹€ì •ë¯¸'ì™€ ê°™ì€ ë¶€ì„œì˜ ì‚¬ëŒë“¤ ì´ë¦„ê³¼ ì§ê¸‰ ë¶€ì„œë²ˆí˜¸
 
 select * from s_emp;
 
 select name , title , dept_id
 from s_emp
-where name = '±èÁ¤¹Ì';
+where name = 'ê¹€ì •ë¯¸';
 
 
 select name , title , dept_id
 from s_emp
 where dept_id = (select dept_id 
                     from s_emp
-                     where name = '±èÁ¤¹Ì');
+                     where name = 'ê¹€ì •ë¯¸');
 
 select m.name , m.title , m.dept_id
 from s_emp e , s_emp m
-where e.name = '±èÁ¤¹Ì'
+where e.name = 'ê¹€ì •ë¯¸'
 and e.dept_id = m.dept_id
 ;
 
@@ -71,20 +71,20 @@ from s_emp
 where dept_id  = ( select dept_id
                      from s_emp
                       where dept_id = 110);
---  ¿¡·¯:  ´ÜÀÏ Çà ÇÏÀ§ ÁúÀÇ¿¡ 2°³ ÀÌ»óÀÇ ÇàÀÌ ¸®ÅÏµÇ¾ú½À´Ï´Ù.                   
--- ¸ŞÀÎ¹®ÀåÀ¸·Î ³Ñ¾î°¡´Â ÇàÀÌ ¿©·¯°³¶ó¼­ ¶ß´Â ¿¡·¯ ¶ó°íÇÔ
+--  ì—ëŸ¬:  ë‹¨ì¼ í–‰ í•˜ìœ„ ì§ˆì˜ì— 2ê°œ ì´ìƒì˜ í–‰ì´ ë¦¬í„´ë˜ì—ˆìŠµë‹ˆë‹¤.                   
+-- ë©”ì¸ë¬¸ì¥ìœ¼ë¡œ ë„˜ì–´ê°€ëŠ” í–‰ì´ ì—¬ëŸ¬ê°œë¼ì„œ ëœ¨ëŠ” ì—ëŸ¬ ë¼ê³ í•¨
 
 select dept_id from s_emp where dept_id =110;
--- dept_id = 110 4°³ ÇàÀÎ°¡ È®ÀÎ
+-- dept_id = 110 4ê°œ í–‰ì¸ê°€ í™•ì¸
 
--- ÇØ°á¹æ¹ı
+-- í•´ê²°ë°©ë²•
 select name , title , salary , dept_id
 from s_emp
 where dept_id = (select distinct dept_id
                     from s_emp
                     where dept_id = 110);
--- distinct »ç¿ëÇØ¼­ Áßº¹Çà Á¦°Å ÇØ¼­ 
--- ¸ŞÀÎÄõ¸®·Î ³Ñ¾î°¡´Â ÇàÀÌ 1°³¸¸ ¹ß»ıÇÏ°ÔÇßÀ½
+-- distinct ì‚¬ìš©í•´ì„œ ì¤‘ë³µí–‰ ì œê±° í•´ì„œ 
+-- ë©”ì¸ì¿¼ë¦¬ë¡œ ë„˜ì–´ê°€ëŠ” í–‰ì´ 1ê°œë§Œ ë°œìƒí•˜ê²Œí–ˆìŒ
 
 select distinct dept_id
                     from s_emp
@@ -92,21 +92,21 @@ select distinct dept_id
 ---------------------------------------------------  
 
 --Multi ROw Sub QEUERY
--- Àü´ŞµÇ´Â ÇàÀÌ ¿©·¯°³
+-- ì „ë‹¬ë˜ëŠ” í–‰ì´ ì—¬ëŸ¬ê°œ
 
 
 select * from s_emp where dept_id = 103 and dept_id = 111;
--- ¿Ö Ãâ·Â¾ÈÇÔ ?
---dept_id°¡ 103 ±×¸®°í 111ÀÎ ÇàÀÌ ¾øÀ½
+-- ì™œ ì¶œë ¥ì•ˆí•¨ ?
+--dept_idê°€ 103 ê·¸ë¦¬ê³  111ì¸ í–‰ì´ ì—†ìŒ
 
--- ÇØ°á¹æ¹ı and ´ë½Å OR »ç¿ë
+-- í•´ê²°ë°©ë²• and ëŒ€ì‹  OR ì‚¬ìš©
 select * from s_emp where dept_id = 103 or dept_id = 111;
 
 
--- Áö¿ª¹øÈ£(region_id)°¡ 3ÀÎ ºÎ¼­¹øÈ£(dept_id)¸¦ Á¶È¸
+-- ì§€ì—­ë²ˆí˜¸(region_id)ê°€ 3ì¸ ë¶€ì„œë²ˆí˜¸(dept_id)ë¥¼ ì¡°íšŒ
 select * from s_dept;
 select * from s_dept where region_id = 3;
--- Áö¿ª¹øÈ£ 3ÀÎ(region_id = 3) ºÎ¼­(dept_id)¿¡ ¼ÓÇÑ Á÷¿øµé¿¡ ÀÌ¸§°ú Á÷±Ş ºÎ¼­¹øÈ£ ¿¬ºÀÀ» Á¶È¸
+-- ì§€ì—­ë²ˆí˜¸ 3ì¸(region_id = 3) ë¶€ì„œ(dept_id)ì— ì†í•œ ì§ì›ë“¤ì— ì´ë¦„ê³¼ ì§ê¸‰ ë¶€ì„œë²ˆí˜¸ ì—°ë´‰ì„ ì¡°íšŒ
 
 select e.name, e.title, e.dept_id, e.salary
 from s_emp e
@@ -116,7 +116,7 @@ where e.dept_id in (select id
                     
 -------------------------------------------------------------------------------
 -- Multi column SubQuery
--- where¿¡¼­ ºñ±³ÇÏ´Â ÄÃ·³ÀÌ 2°³
+-- whereì—ì„œ ë¹„êµí•˜ëŠ” ì»¬ëŸ¼ì´ 2ê°œ
 select * from s_emp;
 select name , dept_id ,title from s_emp where dept_id =111;
 
@@ -126,26 +126,27 @@ where e.dept_id = d.id
 and (e.name ,e.dept_id) in (select name, dept_id
                     from s_emp
                     where dept_id = 111 or dept_id = 106);
---- ¿¡·¯                  
--- 1. °ü°è ¿¬»êÀÚ°¡ ºÎÀûÇÕÇÕ´Ï´Ù
--- and (e.name ,e.dept_id) in () ·Î ¹­¾îÁà¾ßÇÑ´Ù°íÇÔ
--- e.name , e.dept_id°¡ °¢°¢ °³º°ÀûÀÎ Á¶°ÇÀ¸·Î ÇØ¼®
+--- ì—ëŸ¬                  
+-- 1. ê´€ê³„ ì—°ì‚°ìê°€ ë¶€ì í•©í•©ë‹ˆë‹¤
+-- and e.name ,e.dept_id in ~ 
+-- (e.name ,e.dept_id) ë¡œ ë¬¶ì–´ì¤˜ì•¼í•œë‹¤ê³ í•¨
+-- ()ì•ˆí•˜ë©´  e.name , e.dept_idê°€ ê°ê° ê°œë³„ì ì¸ ì¡°ê±´ìœ¼ë¡œ í•´ì„
 
--- 2. ¼öÄ¡°¡ ºÎÀûÇÕÇÕ´Ï´Ù
+-- 2. ìˆ˜ì¹˜ê°€ ë¶€ì í•©í•©ë‹ˆë‹¤
 --  and (e.name ,e.dept_id) in (select dept_id,name
--- ¼ø¼­°¡ ¹Ù²î¾î¼­ ¿¡·¯
+-- ìˆœì„œê°€ ë°”ë€Œì–´ì„œ ì—ëŸ¬
 
 -------------------------------------------------------------------
--- ÀÌ¸§ ºÎ¼­¹øÈ£ Á÷±Ş ¿¬ºÀ Á¶È¸
--- ´Ü °¢ ºÎ¼­º° ÃÖ¼Ò ¿¬ºÀÀÚ¸¸ 
+-- ì´ë¦„ ë¶€ì„œë²ˆí˜¸ ì§ê¸‰ ì—°ë´‰ ì¡°íšŒ
+-- ë‹¨ ê° ë¶€ì„œë³„ ìµœì†Œ ì—°ë´‰ìë§Œ 
 
--- 1. ºÎ¼­º° ÃÖ¼Ò ¿¬ºÀ±İ¾×
+-- 1. ë¶€ì„œë³„ ìµœì†Œ ì—°ë´‰ê¸ˆì•¡
 select min(salary),dept_id
 from s_Emp 
 group by dept_id
 order by dept_id;
 
--- 2. ÀÌ¸§ , ºÎ¼­, Á÷±Ş , ¿¬ºÀ
+-- 2. ì´ë¦„ , ë¶€ì„œ, ì§ê¸‰ , ì—°ë´‰
 select e.name , e.title , e.salary , e.dept_id ,d.name
 from s_emp e, s_dept d
 where e.dept_id = d.id
