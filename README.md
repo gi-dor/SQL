@@ -2,11 +2,7 @@
 
 -----
 
-oracle db
 
-oracle SQL
-
-![oracle_sql](https://user-images.githubusercontent.com/86302876/233829801-29ff8684-0623-4e67-8595-22a399f365d5.jpg )
 
 -----------
 
